@@ -1,775 +1,391 @@
-2026-10-14 11:57:05.827 |    ___                   _     ____    _    ____
-2026-10-14 11:57:05.827 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:05.827 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:05.827 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:05.827 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:05.827 |        |_|
-2026-10-14 11:57:05.827 | 
-2026-10-14 11:57:05.827 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:05.827 | GIT_BRANCH:  main
-2026-10-14 11:57:05.827 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:05.827 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:05.827 | 
-2026-10-14 11:57:05.829 | 2026-10-14 10:57:05 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:05.837 | 2026-10-14 10:57:05 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:06.017 | 2026-10-14 10:57:06 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:06.017 | 2026-10-14 10:57:06 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:06.018 | 2026-10-14 10:57:06 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:06.073 | 2026-10-14 10:57:06 INFO [/opt/run.sh:390] Initializing [/var/lib/ldap]...
-2026-10-14 11:57:06.076 | 2026-10-14 10:57:06 INFO [/opt/run.sh:390] Initializing [/etc/ldap/slapd.d]...
-2026-10-14 11:57:06.164 | 2026-10-14 10:57:06 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:06.165 | 2026-10-14 10:57:06 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:06.686 | 2026-10-14 10:57:06 INFO [/opt/run.sh:299] slapd started (pid 247)
-2026-10-14 11:57:06.688 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.689 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:06.732 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.732 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.732 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.733 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:06.733 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.735 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.737 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_ldapPublicKey.ldif]...
-2026-10-14 11:57:06.783 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.783 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.783 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.784 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] adding new entry "cn=openssh-lpk,cn=schema,cn=config"
-2026-10-14 11:57:06.784 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.793 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.795 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_module_argon2.ldif]...
-2026-10-14 11:57:06.819 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.819 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.819 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.819 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
-2026-10-14 11:57:06.819 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.821 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.822 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_frontend.ldif]...
-2026-10-14 11:57:06.869 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.869 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.869 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.870 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] modifying entry "olcDatabase={-1}frontend,cn=config"
-2026-10-14 11:57:06.870 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.871 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.872 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_memberof.ldif]...
-2026-10-14 11:57:06.934 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.934 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.934 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.936 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
-2026-10-14 11:57:06.937 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.937 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] adding new entry "olcOverlay=memberof,olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:06.937 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.937 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] adding new entry "olcOverlay=refint,olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:06.937 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.938 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.939 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb.ldif]...
-2026-10-14 11:57:06.979 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:06.979 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:06.979 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:06.979 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:06.979 | 2026-10-14 10:57:06 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:06.981 | 2026-10-14 10:57:06 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:06.982 | 2026-10-14 10:57:06 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb_acls.ldif]...
-2026-10-14 11:57:07.054 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:07.054 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:07.054 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:07.055 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:07.055 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.056 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.057 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb_indexes.ldif]...
-2026-10-14 11:57:07.087 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:07.087 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:07.087 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:07.103 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:07.103 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.105 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.106 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_unique.ldif]...
-2026-10-14 11:57:07.147 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:07.147 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:07.147 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:07.148 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
-2026-10-14 11:57:07.148 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.148 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "olcOverlay=unique,olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:07.148 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.150 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.151 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_ppolicy.ldif]...
-2026-10-14 11:57:07.196 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:07.196 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:07.196 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:07.197 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
-2026-10-14 11:57:07.198 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.198 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "olcOverlay=ppolicy,olcDatabase={1}mdb,cn=config"
-2026-10-14 11:57:07.198 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.199 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.201 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_tree.ldif]...
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=Groups,dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=Internal,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=External,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=TechnicalAccounts,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.343 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.345 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.346 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_ppolicy.ldif]...
-2026-10-14 11:57:07.451 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "ou=Policies,dc=ensam,dc=ma"
-2026-10-14 11:57:07.451 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.451 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "cn=DefaultPasswordPolicy,ou=Policies,dc=ensam,dc=ma"
-2026-10-14 11:57:07.451 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.453 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.454 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_entries.ldif]...
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "uid=employee1,ou=Internal,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "uid=guest1,ou=External,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "uid=machine1,ou=TechnicalAccounts,ou=Users,dc=ensam,dc=ma"
-2026-10-14 11:57:07.766 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "cn=ldap-admins,ou=Groups,dc=ensam,dc=ma"
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "cn=employees,ou=Groups,dc=ensam,dc=ma"
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "cn=guests,ou=Groups,dc=ensam,dc=ma"
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] adding new entry "cn=machines,ou=Groups,dc=ensam,dc=ma"
-2026-10-14 11:57:07.767 | 2026-10-14 10:57:07 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:07.769 | 2026-10-14 10:57:07 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:07.770 | 2026-10-14 10:57:07 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/custom/10-campus.ldif]...
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "ou=groups,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "cn=students,ou=groups,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "cn=teachers,ou=groups,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "cn=staff,ou=groups,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "cn=admins,ou=groups,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.alami,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.bennani,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=t.idrissi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=t.tazi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=a.chraibi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=it.berrada,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.chraibi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.mansouri,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.bennani2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.rami,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.785 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.naciri,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.sebti,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.kadiri,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.filali,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.naciri2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.kettani,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.kadiri2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.rami2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.guessous,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.sqalli,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.lamrani,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.786 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi4,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.cherkaoui,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.filali2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi5,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi4,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:11.787 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani2,oldap_add: Constraint violation (19)
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 	additional info: non-unique attributes found with (|(cn=Asmae Daoudi))
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] u=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun4,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.rami3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada2,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki4,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.ouazzani,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi3,ou=people,ou=campus,dc=ensam,dc=ma"
-2026-10-14 11:57:12.044 | 2026-10-14 10:57:10 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:12.046 | 10:57:12 Error - exited with status 19 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:12.047 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:12.047 |    221	    trap : EXIT
-2026-10-14 11:57:12.047 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:12.047 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:12.047 |    224	  )
-2026-10-14 11:57:12.047 |    225	}
-2026-10-14 11:57:12.047 |    226	
-2026-10-14 11:57:12.048 | 10:57:12 Error - exited with status 19 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:12.049 |    221	    trap : EXIT
-2026-10-14 11:57:12.049 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:12.049 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:12.049 |    224	  )
-2026-10-14 11:57:12.049 |    225	}
-2026-10-14 11:57:12.049 |    226	
-2026-10-14 11:57:12.049 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:12.050 | 10:57:12 Error - exited with status 19 in [/opt/run.sh] at line 760:
-2026-10-14 11:57:12.051 |    757	            -y <(printf '%s' "$root_user_password") \
-2026-10-14 11:57:12.051 |    758	            "$custom_ldif"
-2026-10-14 11:57:12.051 |    759	        done
-2026-10-14 11:57:12.051 |    760	      )
-2026-10-14 11:57:12.051 |    761	    fi
-2026-10-14 11:57:12.051 |    762	  fi
-2026-10-14 11:57:12.051 |    763	
-2026-10-14 11:57:14.148 |    ___                   _     ____    _    ____
-2026-10-14 11:57:14.148 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:14.148 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:14.148 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:14.148 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:14.148 |        |_|
-2026-10-14 11:57:14.148 | 
-2026-10-14 11:57:14.148 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:14.148 | GIT_BRANCH:  main
-2026-10-14 11:57:14.148 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:14.148 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:14.148 | 
-2026-10-14 11:57:14.150 | 2026-10-14 10:57:14 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:14.156 | 2026-10-14 10:57:14 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:14.211 | 2026-10-14 10:57:14 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:14.211 | 2026-10-14 10:57:14 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:14.212 | 2026-10-14 10:57:14 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:14.334 | 2026-10-14 10:57:14 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:14.335 | 2026-10-14 10:57:14 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:14.849 | 2026-10-14 10:57:14 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:14.850 | 2026-10-14 10:57:14 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:14.851 | 2026-10-14 10:57:14 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:14.883 | 2026-10-14 10:57:14 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:14.885 | 10:57:14 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:14.886 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:14.886 |    221	    trap : EXIT
-2026-10-14 11:57:14.886 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:14.886 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:14.886 |    224	  )
-2026-10-14 11:57:14.886 |    225	}
-2026-10-14 11:57:14.886 |    226	
-2026-10-14 11:57:14.887 | 10:57:14 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:14.888 |    221	    trap : EXIT
-2026-10-14 11:57:14.888 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:14.888 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:14.888 |    224	  )
-2026-10-14 11:57:14.888 |    225	}
-2026-10-14 11:57:14.888 |    226	
-2026-10-14 11:57:14.888 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:15.223 |    ___                   _     ____    _    ____
-2026-10-14 11:57:15.224 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:15.224 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:15.224 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:15.224 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:15.224 |        |_|
-2026-10-14 11:57:15.224 | 
-2026-10-14 11:57:15.224 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:15.224 | GIT_BRANCH:  main
-2026-10-14 11:57:15.224 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:15.224 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:15.224 | 
-2026-10-14 11:57:15.229 | 2026-10-14 10:57:15 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:15.238 | 2026-10-14 10:57:15 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:15.292 | 2026-10-14 10:57:15 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:15.292 | 2026-10-14 10:57:15 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:15.293 | 2026-10-14 10:57:15 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:15.425 | 2026-10-14 10:57:15 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:15.426 | 2026-10-14 10:57:15 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:15.939 | 2026-10-14 10:57:15 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:15.940 | 2026-10-14 10:57:15 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:15.941 | 2026-10-14 10:57:15 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:15.971 | 2026-10-14 10:57:15 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:15.973 | 10:57:15 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:15.973 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:15.973 |    221	    trap : EXIT
-2026-10-14 11:57:15.973 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:15.973 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:15.973 |    224	  )
-2026-10-14 11:57:15.973 |    225	}
-2026-10-14 11:57:15.973 |    226	
-2026-10-14 11:57:15.975 | 10:57:15 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:15.975 |    221	    trap : EXIT
-2026-10-14 11:57:15.975 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:15.975 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:15.975 |    224	  )
-2026-10-14 11:57:15.975 |    225	}
-2026-10-14 11:57:15.975 |    226	
-2026-10-14 11:57:15.975 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:16.478 |    ___                   _     ____    _    ____
-2026-10-14 11:57:16.478 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:16.478 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:16.478 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:16.478 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:16.478 |        |_|
-2026-10-14 11:57:16.478 | 
-2026-10-14 11:57:16.479 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:16.479 | GIT_BRANCH:  main
-2026-10-14 11:57:16.479 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:16.479 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:16.479 | 
-2026-10-14 11:57:16.480 | 2026-10-14 10:57:16 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:16.487 | 2026-10-14 10:57:16 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:16.545 | 2026-10-14 10:57:16 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:16.545 | 2026-10-14 10:57:16 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:16.545 | 2026-10-14 10:57:16 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:16.672 | 2026-10-14 10:57:16 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:16.674 | 2026-10-14 10:57:16 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:17.187 | 2026-10-14 10:57:17 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:17.188 | 2026-10-14 10:57:17 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:17.189 | 2026-10-14 10:57:17 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:17.219 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:17.219 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:17.219 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:17.220 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:17.220 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:17.220 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:17.220 | 2026-10-14 10:57:17 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:17.221 | 10:57:17 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:17.222 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:17.222 |    221	    trap : EXIT
-2026-10-14 11:57:17.222 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:17.222 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:17.222 |    224	  )
-2026-10-14 11:57:17.222 |    225	}
-2026-10-14 11:57:17.222 |    226	
-2026-10-14 11:57:17.223 | 10:57:17 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:17.224 |    221	    trap : EXIT
-2026-10-14 11:57:17.224 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:17.224 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:17.224 |    224	  )
-2026-10-14 11:57:17.224 |    225	}
-2026-10-14 11:57:17.224 |    226	
-2026-10-14 11:57:17.224 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:18.134 |    ___                   _     ____    _    ____
-2026-10-14 11:57:18.134 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:18.134 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:18.134 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:18.134 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:18.134 |        |_|
-2026-10-14 11:57:18.134 | 
-2026-10-14 11:57:18.134 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:18.134 | GIT_BRANCH:  main
-2026-10-14 11:57:18.134 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:18.134 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:18.135 | 
-2026-10-14 11:57:18.137 | 2026-10-14 10:57:18 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:18.144 | 2026-10-14 10:57:18 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:18.201 | 2026-10-14 10:57:18 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:18.201 | 2026-10-14 10:57:18 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:18.202 | 2026-10-14 10:57:18 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:18.322 | 2026-10-14 10:57:18 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:18.323 | 2026-10-14 10:57:18 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:18.836 | 2026-10-14 10:57:18 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:18.837 | 2026-10-14 10:57:18 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:18.838 | 2026-10-14 10:57:18 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:18.869 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:18.869 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:18.869 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:18.869 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:18.869 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:18.870 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:18.870 | 2026-10-14 10:57:18 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:18.871 | 10:57:18 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:18.872 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:18.872 |    221	    trap : EXIT
-2026-10-14 11:57:18.872 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:18.872 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:18.872 |    224	  )
-2026-10-14 11:57:18.872 |    225	}
-2026-10-14 11:57:18.872 |    226	
-2026-10-14 11:57:18.873 | 10:57:18 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:18.874 |    221	    trap : EXIT
-2026-10-14 11:57:18.874 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:18.874 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:18.874 |    224	  )
-2026-10-14 11:57:18.874 |    225	}
-2026-10-14 11:57:18.874 |    226	
-2026-10-14 11:57:18.874 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:20.595 |    ___                   _     ____    _    ____
-2026-10-14 11:57:20.595 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:20.595 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:20.595 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:20.595 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:20.595 |        |_|
-2026-10-14 11:57:20.595 | 
-2026-10-14 11:57:20.596 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:20.596 | GIT_BRANCH:  main
-2026-10-14 11:57:20.596 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:20.596 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:20.596 | 
-2026-10-14 11:57:20.597 | 2026-10-14 10:57:20 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:20.602 | 2026-10-14 10:57:20 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:20.662 | 2026-10-14 10:57:20 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:20.662 | 2026-10-14 10:57:20 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:20.663 | 2026-10-14 10:57:20 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:20.784 | 2026-10-14 10:57:20 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:20.785 | 2026-10-14 10:57:20 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:21.299 | 2026-10-14 10:57:21 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:21.300 | 2026-10-14 10:57:21 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:21.301 | 2026-10-14 10:57:21 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:21.335 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:21.335 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:21.335 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:21.336 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:21.336 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:21.336 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:21.336 | 2026-10-14 10:57:21 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:21.337 | 10:57:21 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:21.338 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:21.338 |    221	    trap : EXIT
-2026-10-14 11:57:21.338 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:21.338 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:21.338 |    224	  )
-2026-10-14 11:57:21.338 |    225	}
-2026-10-14 11:57:21.338 |    226	
-2026-10-14 11:57:21.340 | 10:57:21 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:21.340 |    221	    trap : EXIT
-2026-10-14 11:57:21.340 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:21.340 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:21.340 |    224	  )
-2026-10-14 11:57:21.340 |    225	}
-2026-10-14 11:57:21.340 |    226	
-2026-10-14 11:57:21.340 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:24.647 |    ___                   _     ____    _    ____
-2026-10-14 11:57:24.647 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:24.647 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:24.647 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:24.647 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:24.647 |        |_|
-2026-10-14 11:57:24.647 | 
-2026-10-14 11:57:24.647 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:24.647 | GIT_BRANCH:  main
-2026-10-14 11:57:24.647 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:24.647 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:24.648 | 
-2026-10-14 11:57:24.650 | 2026-10-14 10:57:24 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:24.657 | 2026-10-14 10:57:24 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:24.715 | 2026-10-14 10:57:24 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:24.715 | 2026-10-14 10:57:24 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:24.716 | 2026-10-14 10:57:24 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:24.833 | 2026-10-14 10:57:24 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:24.834 | 2026-10-14 10:57:24 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:25.348 | 2026-10-14 10:57:25 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:25.349 | 2026-10-14 10:57:25 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:25.350 | 2026-10-14 10:57:25 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:25.380 | 2026-10-14 10:57:25 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:25.382 | 10:57:25 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:25.383 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:25.383 |    221	    trap : EXIT
-2026-10-14 11:57:25.383 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:25.383 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:25.383 |    224	  )
-2026-10-14 11:57:25.383 |    225	}
-2026-10-14 11:57:25.383 |    226	
-2026-10-14 11:57:25.384 | 10:57:25 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:25.385 |    221	    trap : EXIT
-2026-10-14 11:57:25.385 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:25.385 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:25.385 |    224	  )
-2026-10-14 11:57:25.385 |    225	}
-2026-10-14 11:57:25.385 |    226	
-2026-10-14 11:57:25.385 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:31.906 |    ___                   _     ____    _    ____
-2026-10-14 11:57:31.906 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:31.906 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:31.906 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:31.906 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:31.906 |        |_|
-2026-10-14 11:57:31.906 | 
-2026-10-14 11:57:31.907 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:31.907 | GIT_BRANCH:  main
-2026-10-14 11:57:31.907 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:31.907 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:31.907 | 
-2026-10-14 11:57:31.909 | 2026-10-14 10:57:31 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:31.913 | 2026-10-14 10:57:31 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:31.975 | 2026-10-14 10:57:31 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:31.975 | 2026-10-14 10:57:31 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:31.976 | 2026-10-14 10:57:31 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:32.100 | 2026-10-14 10:57:32 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:32.101 | 2026-10-14 10:57:32 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:32.614 | 2026-10-14 10:57:32 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:32.615 | 2026-10-14 10:57:32 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:32.616 | 2026-10-14 10:57:32 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:32.647 | 2026-10-14 10:57:32 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:32.648 | 10:57:32 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:32.649 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:32.649 |    221	    trap : EXIT
-2026-10-14 11:57:32.649 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:32.649 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:32.649 |    224	  )
-2026-10-14 11:57:32.649 |    225	}
-2026-10-14 11:57:32.649 |    226	
-2026-10-14 11:57:32.651 | 10:57:32 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:32.651 |    221	    trap : EXIT
-2026-10-14 11:57:32.651 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:32.651 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:32.651 |    224	  )
-2026-10-14 11:57:32.651 |    225	}
-2026-10-14 11:57:32.651 |    226	
-2026-10-14 11:57:32.651 |    227	function reconcile_argon2_module() {
-2026-10-14 11:57:45.564 |    ___                   _     ____    _    ____
-2026-10-14 11:57:45.564 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:57:45.564 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:57:45.564 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:57:45.564 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:57:45.564 |        |_|
-2026-10-14 11:57:45.564 | 
-2026-10-14 11:57:45.565 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:57:45.565 | GIT_BRANCH:  main
-2026-10-14 11:57:45.565 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:57:45.565 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:57:45.565 | 
-2026-10-14 11:57:45.567 | 2026-10-14 10:57:45 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68] 
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68]     config
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:57:45.575 | 2026-10-14 10:57:45 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:57:45.640 | 2026-10-14 10:57:45 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:57:45.640 | 2026-10-14 10:57:45 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:57:45.642 | 2026-10-14 10:57:45 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:57:45.786 | 2026-10-14 10:57:45 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:57:45.788 | 2026-10-14 10:57:45 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:57:46.302 | 2026-10-14 10:57:46 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:57:46.303 | 2026-10-14 10:57:46 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:57:46.304 | 2026-10-14 10:57:46 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:57:46.335 | 2026-10-14 10:57:46 INFO [/opt/run.sh:223] 
-2026-10-14 11:57:46.338 | 10:57:46 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:57:46.339 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:57:46.339 |    221	    trap : EXIT
-2026-10-14 11:57:46.339 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:46.339 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:46.339 |    224	  )
-2026-10-14 11:57:46.339 |    225	}
-2026-10-14 11:57:46.339 |    226	
-2026-10-14 11:57:46.341 | 10:57:46 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:57:46.342 |    221	    trap : EXIT
-2026-10-14 11:57:46.342 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:57:46.342 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:57:46.342 |    224	  )
-2026-10-14 11:57:46.342 |    225	}
-2026-10-14 11:57:46.342 |    226	
-2026-10-14 11:57:46.342 |    227	function reconcile_argon2_module() {
-2026-10-14 11:58:12.058 |    ___                   _     ____    _    ____
-2026-10-14 11:58:12.058 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
-2026-10-14 11:58:12.058 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
-2026-10-14 11:58:12.058 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
-2026-10-14 11:58:12.058 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
-2026-10-14 11:58:12.058 |        |_|
-2026-10-14 11:58:12.058 | 
-2026-10-14 11:58:12.059 | GIT_REPO:    https://github.com/vegardit/docker-openldap
-2026-10-14 11:58:12.059 | GIT_BRANCH:  main
-2026-10-14 11:58:12.059 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
-2026-10-14 11:58:12.059 | IMAGE_BUILD: 2026-10-07T21:45:05Z
-2026-10-14 11:58:12.059 | 
-2026-10-14 11:58:12.062 | 2026-10-14 10:58:12 INFO [/opt/run.sh:29] Timezone is UTC +0000
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68] 
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68] Included static backends:
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68]     config
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68]     ldif
-2026-10-14 11:58:12.072 | 2026-10-14 10:58:12 INFO [/opt/run.sh:68]     monitor
-2026-10-14 11:58:12.145 | 2026-10-14 10:58:12 INFO [/opt/run.sh:367] ┌������������������������������������������┐
-2026-10-14 11:58:12.145 | 2026-10-14 10:58:12 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
-2026-10-14 11:58:12.147 | 2026-10-14 10:58:12 INFO [/opt/run.sh:367] └������������������������������������������┘
-2026-10-14 11:58:12.272 | 2026-10-14 10:58:12 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
-2026-10-14 11:58:12.274 | 2026-10-14 10:58:12 INFO [/opt/run.sh:273] Starting slapd for init/migration...
-2026-10-14 11:58:12.789 | 2026-10-14 10:58:12 INFO [/opt/run.sh:299] slapd started (pid 243)
-2026-10-14 11:58:12.790 | 2026-10-14 10:58:12 INFO [/opt/run.sh:211] ---------------------------------------
-2026-10-14 11:58:12.791 | 2026-10-14 10:58:12 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] SASL SSF: 0
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] ldap_add: Other (e.g., implementation specific) error (80)
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] 	additional info: olcAttributeTypes: Duplicate attributeType: "1.3.6.1.4.1.15953.9.1.1"
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
-2026-10-14 11:58:12.823 | 2026-10-14 10:58:12 INFO [/opt/run.sh:223] 
-2026-10-14 11:58:12.825 | 10:58:12 Error - exited with status 80 in [/opt/run.sh] at line 223:
-2026-10-14 11:58:12.826 |    220	    # temporary copy behind. The subshell contains the trap to this invocation.
-2026-10-14 11:58:12.826 |    221	    trap : EXIT
-2026-10-14 11:58:12.826 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:58:12.826 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:58:12.826 |    224	  )
-2026-10-14 11:58:12.826 |    225	}
-2026-10-14 11:58:12.826 |    226	
-2026-10-14 11:58:12.827 | 10:58:12 Error - exited with status 80 in [/opt/run.sh] at line 224:
-2026-10-14 11:58:12.828 |    221	    trap : EXIT
-2026-10-14 11:58:12.828 |    222	    interpolate <"$file" >"$tmpfile"
-2026-10-14 11:58:12.828 |    223	    "ldap$action" -H ldapi:/// "${@:1:${#}-1}" -f "$tmpfile" 2>&1 | log INFO
-2026-10-14 11:58:12.828 |    224	  )
-2026-10-14 11:58:12.828 |    225	}
-2026-10-14 11:58:12.828 |    226	
-2026-10-14 11:58:12.828 |    227	function reconcile_argon2_module() {
+2026-10-14 12:13:48.427 |    ___                   _     ____    _    ____
+2026-10-14 12:13:48.427 |   / _ \ _ __   ___ _ __ | |   |  _ \  / \  |  _ \
+2026-10-14 12:13:48.427 |  | | | | '_ \ / _ \ '_ \| |   | | | |/ _ \ | |_) |
+2026-10-14 12:13:48.427 |  | |_| | |_) |  __/ | | | |___| |_| / ___ \|  __/
+2026-10-14 12:13:48.427 |   \___/| .__/ \___|_| |_|_____|____/_/   \_\_|
+2026-10-14 12:13:48.427 |        |_|
+2026-10-14 12:13:48.427 | 
+2026-10-14 12:13:48.428 | GIT_REPO:    https://github.com/vegardit/docker-openldap
+2026-10-14 12:13:48.428 | GIT_BRANCH:  main
+2026-10-14 12:13:48.428 | GIT_COMMIT:  8331dc4 @ 2026-09-02 21:01:37 UTC
+2026-10-14 12:13:48.428 | IMAGE_BUILD: 2026-10-07T21:45:05Z
+2026-10-14 12:13:48.428 | 
+2026-10-14 12:13:48.431 | 2026-10-14 11:13:48 INFO [/opt/run.sh:29] Timezone is UTC +0000
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68] @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68] 
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68] Included static backends:
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68]     config
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68]     ldif
+2026-10-14 12:13:48.438 | 2026-10-14 11:13:48 INFO [/opt/run.sh:68]     monitor
+2026-10-14 12:13:48.589 | 2026-10-14 11:13:48 INFO [/opt/run.sh:367] ┌������������������������������������������┐
+2026-10-14 12:13:48.589 | 2026-10-14 11:13:48 INFO [/opt/run.sh:367] │ Applying initial configuration...        │
+2026-10-14 12:13:48.590 | 2026-10-14 11:13:48 INFO [/opt/run.sh:367] └������������������������������������������┘
+2026-10-14 12:13:48.650 | 2026-10-14 11:13:48 INFO [/opt/run.sh:390] Initializing [/var/lib/ldap]...
+2026-10-14 12:13:48.654 | 2026-10-14 11:13:48 INFO [/opt/run.sh:390] Initializing [/etc/ldap/slapd.d]...
+2026-10-14 12:13:48.748 | 2026-10-14 11:13:48 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
+2026-10-14 12:13:48.749 | 2026-10-14 11:13:48 INFO [/opt/run.sh:273] Starting slapd for init/migration...
+2026-10-14 12:13:49.267 | 2026-10-14 11:13:49 INFO [/opt/run.sh:299] slapd started (pid 247)
+2026-10-14 12:13:49.268 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.270 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_sudo.ldif]...
+2026-10-14 12:13:49.320 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.320 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.320 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.322 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "cn=sudo,cn=schema,cn=config"
+2026-10-14 12:13:49.322 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.323 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.325 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/schema_ldapPublicKey.ldif]...
+2026-10-14 12:13:49.371 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.371 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.371 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.372 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "cn=openssh-lpk,cn=schema,cn=config"
+2026-10-14 12:13:49.372 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.381 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.382 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_module_argon2.ldif]...
+2026-10-14 12:13:49.409 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.409 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.409 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.410 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
+2026-10-14 12:13:49.410 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.412 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.413 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_frontend.ldif]...
+2026-10-14 12:13:49.478 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.479 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.479 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.480 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "olcDatabase={-1}frontend,cn=config"
+2026-10-14 12:13:49.480 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.482 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.484 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_memberof.ldif]...
+2026-10-14 12:13:49.568 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.568 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.568 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "olcOverlay=memberof,olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "olcOverlay=refint,olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.570 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.572 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.574 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb.ldif]...
+2026-10-14 12:13:49.622 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.622 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.622 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.623 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.623 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.625 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.626 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb_acls.ldif]...
+2026-10-14 12:13:49.736 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.736 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.736 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.737 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.737 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.739 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.741 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/init_mdb_indexes.ldif]...
+2026-10-14 12:13:49.780 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.780 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.781 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.788 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.788 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.790 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.792 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_unique.ldif]...
+2026-10-14 12:13:49.833 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.833 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.833 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.834 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
+2026-10-14 12:13:49.834 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.834 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "olcOverlay=unique,olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.834 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.836 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.838 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_module_ppolicy.ldif]...
+2026-10-14 12:13:49.880 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL/EXTERNAL authentication started
+2026-10-14 12:13:49.880 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+2026-10-14 12:13:49.880 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] SASL SSF: 0
+2026-10-14 12:13:49.881 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] modifying entry "cn=module{0},cn=config"
+2026-10-14 12:13:49.881 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.881 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "olcOverlay=ppolicy,olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:49.881 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:49.883 | 2026-10-14 11:13:49 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:49.884 | 2026-10-14 11:13:49 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_tree.ldif]...
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "ou=Groups,dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "ou=Internal,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "ou=External,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] adding new entry "ou=TechnicalAccounts,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.022 | 2026-10-14 11:13:49 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.024 | 2026-10-14 11:13:50 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:50.025 | 2026-10-14 11:13:50 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_ppolicy.ldif]...
+2026-10-14 12:13:50.140 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "ou=Policies,dc=ensam,dc=ma"
+2026-10-14 12:13:50.140 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.140 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "cn=DefaultPasswordPolicy,ou=Policies,dc=ensam,dc=ma"
+2026-10-14 12:13:50.140 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.142 | 2026-10-14 11:13:50 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:50.144 | 2026-10-14 11:13:50 INFO [/opt/run.sh:214] Executing [ldapadd /opt/ldifs/init_org_entries.ldif]...
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "uid=employee1,ou=Internal,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "uid=guest1,ou=External,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "uid=machine1,ou=TechnicalAccounts,ou=Users,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "cn=ldap-admins,ou=Groups,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "cn=employees,ou=Groups,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "cn=guests,ou=Groups,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] adding new entry "cn=machines,ou=Groups,dc=ensam,dc=ma"
+2026-10-14 12:13:50.479 | 2026-10-14 11:13:50 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:50.482 | 2026-10-14 11:13:50 INFO [/opt/run.sh:211] ---------------------------------------
+2026-10-14 12:13:50.483 | 2026-10-14 11:13:50 INFO [/opt/run.sh:214] Executing [ldapmodify /opt/ldifs/custom/10-campus.ldif]...
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "ou=groups,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "cn=students,ou=groups,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "cn=teachers,ou=groups,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "cn=staff,ou=groups,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "cn=admins,ou=groups,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.alami,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bennani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.idrissi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.tazi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.chraibi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=it.berrada,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.chraibi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mansouri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bennani2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.rami,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.naciri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.sebti,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.419 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.kadiri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.filali,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.naciri2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.kettani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.kadiri2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.rami2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.guessous,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.sqalli,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lamrani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.cherkaoui,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.filali2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi5,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.tazi4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:54.420 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.amrani3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.fassi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.rami3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.elmalki4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.berrada3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.ouazzani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.daoudi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.kettani2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.filali3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bennani3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.403 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.jabri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.guessous2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.ouazzani2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.idrissi6,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lamrani2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.kettani3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.bouzid4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.ouazzani3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.mernissi5,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.sebti2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.benjelloun5,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.lahlou5,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=s.hajji4,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.benjelloun,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.mansouri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.lamrani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.ouazzani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.lahlou,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.zemmouri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.idrissi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.bennani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.tazi2,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.bouzid,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.guessous,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.naciri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=t.idrissi3,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.ouazzani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.sebti,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.benjelloun,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.kadiri,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=a.cherkaoui,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=it.tazi,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] adding new entry "uid=it.lamrani,ou=people,ou=campus,dc=ensam,dc=ma"
+2026-10-14 12:13:55.404 | 2026-10-14 11:13:53 INFO [/opt/run.sh:223] 
+2026-10-14 12:13:55.406 | 2026-10-14 11:13:55 INFO [/opt/run.sh:768] ---------------------------------------
+2026-10-14 12:13:55.413 | 2026-10-14 11:13:55 INFO [/opt/run.sh:312] Stopping slapd...
+2026-10-14 12:13:55.419 | 2026-10-14 11:13:55 INFO [/opt/run.sh:335] slapd stopped
+2026-10-14 12:13:55.498 | 2026-10-14 11:13:55 INFO [/opt/tls.sh:597] Stopped TLS configuration already permits pre-start maintenance
+2026-10-14 12:13:55.500 | 2026-10-14 11:13:55 INFO [/opt/run.sh:273] Starting slapd for init/migration...
+2026-10-14 12:13:56.019 | 2026-10-14 11:13:56 INFO [/opt/run.sh:299] slapd started (pid 9277)
+2026-10-14 12:13:56.041 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] modifying entry "olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:56.041 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] 
+2026-10-14 12:13:56.063 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] modifying entry "olcDatabase={1}mdb,cn=config"
+2026-10-14 12:13:56.063 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] 
+2026-10-14 12:13:56.088 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:446] Reconciling Debian PPM policy attributes from LDAP_PPOLICY_PQCHECKER_RULE...
+2026-10-14 12:13:56.100 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] modifying entry "cn=DefaultPasswordPolicy,ou=Policies,dc=ensam,dc=ma"
+2026-10-14 12:13:56.100 | 2026-10-14 11:13:56 INFO [/opt/ppm.sh:158] 
+2026-10-14 12:13:56.102 | 2026-10-14 11:13:56 INFO [/opt/backup.sh:312] Creating LDAP backup at [/var/lib/ldap/data.ldif]...
+2026-10-14 12:13:56.130 | 2026-10-14 11:13:56 INFO [/opt/run.sh:312] Stopping slapd...
+2026-10-14 12:13:56.136 | 2026-10-14 11:13:56 INFO [/opt/run.sh:335] slapd stopped
+2026-10-14 12:13:56.139 | 2026-10-14 11:13:56 INFO [/opt/backup.sh:528] ┌�������������������������������������������������������������������������������������������┐
+2026-10-14 12:13:56.139 | 2026-10-14 11:13:56 INFO [/opt/backup.sh:528] │ Configuring LDAP backup task to run daily: time=[02:00] file=[/var/lib/ldap/data.ldif]... │
+2026-10-14 12:13:56.140 | 2026-10-14 11:13:56 INFO [/opt/backup.sh:528] └�������������������������������������������������������������������������������������������┘
+2026-10-14 12:13:56.157 | 2026-10-14 11:13:56 INFO [/opt/run.sh:850] ┌������������������������������������������┐
+2026-10-14 12:13:56.157 | 2026-10-14 11:13:56 INFO [/opt/run.sh:850] │ Starting OpenLDAP: slapd...              │
+2026-10-14 12:13:56.159 | 2026-10-14 11:13:56 INFO [/opt/run.sh:850] └������������������������������������������┘
+2026-10-14 12:13:56.163 | 2026-10-14 11:13:56 INFO [/opt/run.sh:863] 6acf63f4.09c24c55 0x7f8822680140 @(#) $OpenLDAP: slapd 2.6.10+dfsg-1 (May 29 2025 23:41:48) $
+2026-10-14 12:13:56.163 | 2026-10-14 11:13:56 INFO [/opt/run.sh:863] 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+2026-10-14 12:13:56.169 | 2026-10-14 11:13:56 INFO [/opt/run.sh:863] 6acf63f4.0a116992 0x7f8822680140 slapd starting
